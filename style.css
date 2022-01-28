@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  box-shadow: 2px 2px 5px 2px #969696;
+  border-radius: 10%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 10%;
+  font-family: 'Dongle', sans-serif;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.back {
+  transform: rotateY(180deg);
+  border-radius: 10%;
+  box-shadow: 2px 2px 5px 2px #969696;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.flip {
+  transform: rotateY(180deg);
+}
+
+.container {
+  margin-top: 50px;
+  width: 480px;
+  height: 600px;
+  display: grid;
+  gap: 20px 20px;
+  grid-template-areas:
+    'a0 a1 a2 a3'
+    'a4 a5 a6 a7'
+    'a8 a9 a10 a11'
+    'a12 a13 a14 a15'
+    'a16 a17 a18 a19';
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#gameOver {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  font-size: 50px;
+  color: white;
+  font-family: 'Dongle', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#restart {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: yellow;
+  font-size: 30px;
+  font-family: 'Dongle', sans-serif;
+}
